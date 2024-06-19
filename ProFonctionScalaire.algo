@@ -1,0 +1,31 @@
+FUNCTION CalculScalaire(A,B : ARRAY_OF INTEGER[]) : INTEGER
+VAR
+    somme : INTEGER := 0;
+    i : INTEGER := 1;
+
+BEGIN
+    FOR i FROM 1 TO B.length STEP 1  DO
+        somme := somme + A[i] * B[i];
+    END_FOR
+
+    RETURN somme ;
+END
+ALGORITHM ProduitScalaire
+VAR
+    V1 : ARRAY_OF INTEGER[];
+    V2 : ARRAY_OF INTEGER[]; 
+BEGIN
+
+
+    IF (V1.length <> V2.length OR V1.length<2 OR V1.length>3) THEN
+        Write("Error")
+    ELSE
+     
+        IF ( CalculScalaire(V1,V2) = 0) THEN
+            Write("Ortho")
+        ELSE
+            Write("Non Ortho")
+        END_IF
+    END_IF
+    
+END

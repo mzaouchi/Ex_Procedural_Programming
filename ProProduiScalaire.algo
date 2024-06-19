@@ -1,0 +1,30 @@
+PROCEDURE CalculScalaire(A,B : ARRAY_OF INTEGER[], VAR stal :INTEGER)
+VAR
+    i : INTEGER := 1;
+BEGIN
+    FOR i FROM 1 TO B.length STEP 1  DO
+        stal := stal + A[i] * B[i];
+    END_FOR
+END
+
+ALGORITHM ProduitScalaire
+VAR
+    V1 : ARRAY_OF INTEGER[];
+    V2 : ARRAY_OF INTEGER[];
+    pro : INTEGER := 0;
+BEGIN
+
+
+    IF (V1.length <> V2.length OR V1.length<2 OR V1.length>3) THEN
+        Write("Error")
+    ELSE
+        CalculScalaire(V1,V2,pro)
+
+        IF (pro = 0) THEN
+            Write("Ortho")
+        ELSE
+            Write("Non Ortho")
+        END_IF
+    END_IF
+    
+END
